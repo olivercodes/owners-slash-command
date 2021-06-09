@@ -1,15 +1,5 @@
 name: 'Owners Slash Command'
 description: 'Check OWNERS before running a slash command'
-inputs:
-  command:
-    description: 'the command being run'
-    required: true
-  executor:
-    description: 'the person running the command'
-    required: true
-outputs:
-  can-run:
-    description: 'pass/fail for if user can run the command'
 runs:
   using: 'node16'
   main: 'index.js'
