@@ -2,4 +2,4 @@ name: 'Owners Slash Command'
 description: 'Check OWNERS before running a slash command'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.js'
