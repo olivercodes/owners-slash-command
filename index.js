@@ -6,7 +6,7 @@ try {
   const actor = github.context.actor;
   const isApprover = getUserIsApprover(actor, '.');
   if (!isApprover) {
-    core.setFailed('user is not an approver')
+    core.setFailed(`${actor} is not an approver. Please check your OWNERS file.`)
   } else {
     return true;
   }
