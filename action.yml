@@ -1,5 +1,5 @@
 name: 'Owners Slash Command'
 description: 'Check OWNERS before running a slash command'
 runs:
-  using: 'node16'
+  using: 'node12'
   main: 'index.js'
