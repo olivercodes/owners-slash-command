@@ -10314,9 +10314,13 @@ const github = __nccwpck_require__(5438);
 const {getUserIsApprover} = __nccwpck_require__(5008);
 
 try {
-  const command = core.getInput('command');
   const actor = github.context.actor;
-  return getUserIsApprover(actor, '.');
+  const isApprover = getUserIsApprover(actor, '.');
+  if (!isApprover) {
+    core.setFailed('user is not an approver')
+  } else {
+    return true;
+  }
 } catch (error) {
   core.setFailed(error.message);
 }
