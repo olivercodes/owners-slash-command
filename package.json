@@ -1,0 +1,21 @@
+{
+  "name": "owners-slash-command",
+  "version": "0.1.0",
+  "description": "checkk owners files before running slash command",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "eslint": "^7.27.0",
+    "jest": "^27.0.4"
+  },
+  "dependencies": {
+    "@actions/core": "^1.3.0",
+    "@actions/github": "^5.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}
