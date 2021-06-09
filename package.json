@@ -4,12 +4,14 @@
   "description": "checkk owners files before running slash command",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "ncc build index.js --out dist"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.23",
+    "@vercel/ncc": "^0.28.6",
     "eslint": "^7.27.0",
     "jest": "^27.0.4"
   },
