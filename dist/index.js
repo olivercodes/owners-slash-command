@@ -6,7 +6,7 @@
 
 const {Octokit} = __nccwpck_require__(7467)
 const core = __nccwpck_require__(2186);
-const octokit = new Octokit({auth: process.env.GITHUB_TOKEN });
+const octokit = new Octokit({auth: process.env.ORG_TOKEN });
 
 function uniq(a) {
   return [...new Set(a)];
