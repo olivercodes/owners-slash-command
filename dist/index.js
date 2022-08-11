@@ -13,7 +13,7 @@ function uniq(a) {
 }
 
 function teamHasWrite(permission) {
-  console.debug(`Permission provided: ${permission}`);
+  core.debug(`Permission provided: ${permission}`);
   const options = ['write', 'push', 'admin'];
   return options.indexOf(permission) != -1;
 }
