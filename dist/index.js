@@ -5,6 +5,7 @@
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const {Octokit} = __nccwpck_require__(1231)
+const core = __nccwpck_require__(2186);
 const octokit = new Octokit();
 
 function uniq(a) {
@@ -34,14 +35,17 @@ async function getRepoTeams(org, repo) {
   return Promise.resolve(data
     .filter(team => teamHasWrite(team.permission))
     .map(team => team.name)
-  );
+  ).catch(err => { core.setFailed(err) });
 }
 
 async function getUserIsApprover(org, repo, user) {
   const repoTeams = await getRepoTeams(org, repo);
   teamsArrays = await Promise.all(
     repoTeams.map(team => getTeamUsers(team))
-  );
+  ).catch((err) => {
+    console.error(err)
+    core.setFailed(err);
+  });
 
   const allApprovingUsers = teamsArrays
     .reduce((acc, arr) => acc.concat(arr));
