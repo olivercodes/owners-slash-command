@@ -1,7 +1,0 @@
-approvers:
-- "infra-leads"
-- "security-engineering-leads"
-reviewers:
-- "infra-leads"
-- "infra-contributors"
-- "security-engineering-leads"
