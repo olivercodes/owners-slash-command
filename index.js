@@ -7,10 +7,9 @@ const {getUserIsApprover} = require('./lib/helpers');
   // const actor = 'username';
   // const repo = 'repo';
   // const org = 'org';
-  const { actor, repo, org } = github.context;
-  console.log(actor, repo, org);
+  const { actor, repo } = github.context;
   try {
-    const isApprover = await getUserIsApprover(org, repo, actor);
+    const isApprover = await getUserIsApprover(repo.owner, repo.repo, actor);
     if (!isApprover) {
       core.setFailed(`${actor} is not an approver`);
     } else return true
