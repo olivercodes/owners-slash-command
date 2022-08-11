@@ -8,6 +8,7 @@ const {getUserIsApprover} = require('./lib/helpers');
   // const repo = 'repo';
   // const org = 'org';
   const { actor, repo, org } = github.context;
+  console.log(actor, repo, org);
   try {
     const isApprover = await getUserIsApprover(org, repo, actor);
     if (!isApprover) {
@@ -16,8 +17,5 @@ const {getUserIsApprover} = require('./lib/helpers');
   } catch (error) {
     core.setFailed(error.message);
   }
-  console.log(isApprover);
-
-
 })();
 

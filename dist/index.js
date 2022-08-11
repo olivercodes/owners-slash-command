@@ -61997,6 +61997,7 @@ const {getUserIsApprover} = __nccwpck_require__(5008);
   // const repo = 'repo';
   // const org = 'org';
   const { actor, repo, org } = github.context;
+  console.log(actor, repo, org);
   try {
     const isApprover = await getUserIsApprover(org, repo, actor);
     if (!isApprover) {
@@ -62005,9 +62006,6 @@ const {getUserIsApprover} = __nccwpck_require__(5008);
   } catch (error) {
     core.setFailed(error.message);
   }
-  console.log(isApprover);
-
-
 })();
 
 
