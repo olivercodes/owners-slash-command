@@ -1,13 +1,13 @@
 {
   "name": "owners-slash-command",
-  "version": "0.1.0",
-  "description": "checkk owners files before running slash command",
+  "version": "1.0.2",
+  "description": "check owners files before running slash command",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "build": "ncc build index.js --out dist"
   },
-  "author": "",
+  "author": "olivercodes",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.23",
