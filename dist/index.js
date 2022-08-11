@@ -16,9 +16,9 @@ function teamHasWrite(permission) {
   return permission == 'push';
 }
 
-async function getTeamUsers(team) {
+async function getTeamUsers(org, team) {
   const {data} = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
-    org: 'ThoughtWorks-DPS',
+    org: org,
     team_slug: team
   });
 
@@ -41,7 +41,7 @@ async function getRepoTeams(org, repo) {
 async function getUserIsApprover(org, repo, user) {
   const repoTeams = await getRepoTeams(org, repo);
   teamsArrays = await Promise.all(
-    repoTeams.map(team => getTeamUsers(team))
+    repoTeams.map(team => getTeamUsers(org, team))
   ).catch((err) => {
     console.error(err)
     core.setFailed(err);
